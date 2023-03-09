@@ -9,11 +9,17 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        response.setContentType("text/html");
+            response.setContentType("text/html");
+        String name = request.getParameter("name");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello, world!</h1>");
-    }
+        if (name != null && !name.isEmpty()) {
 
+            out.println("<h1>Hello, " + name + "!</h1>");
+        } else {
+
+            out.println("<h1>Hello, world!</h1>");
+        }
+    }
 }
+
 
