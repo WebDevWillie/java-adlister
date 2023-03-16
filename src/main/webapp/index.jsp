@@ -11,5 +11,12 @@
     <div class="container">
         <h1>Welcome to the Adlister!</h1>
     </div>
+
+    <c:forEach items="${ads}" var="ad">
+        <div>
+            <h3></h3>
+        </div>
+
+    </c:forEach>
 </body>
 </html>
